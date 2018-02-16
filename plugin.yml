@@ -5,5 +5,5 @@ version: 2.2.5
 authors: [CapricornOfLynx, DokiaCraft]
 website: http://dokiacraft.net/
 permissions:
-    player.size:
+    playersize.size:
         default: op
