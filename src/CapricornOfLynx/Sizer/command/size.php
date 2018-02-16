@@ -15,47 +15,47 @@ class size extends PluginCommand
     {
         parent::__construct("size", $plugin);
         $this->setDescription('change your size.');
-        $this->setUsage('/size <0.1-10|about>');
+        $this->setUsage('/size <0.5-5|about>');
     }
 
     public function execute(CommandSender $sender, string $commandLabel, array $args)
     {
          if ($sender instanceof Player) 
         {
-            if ($sender->hasPermission('player.size'))
+            if ($sender->hasPermission('playersize.size'))
              {
                 if (count($args) == 1) 
                 {
                     if (is_numeric($args[0]))
                     {
-                        if ($args[0] >= 0.1 && $args[0] <= 10)
+                        if ($args[0] >= 0.5 && $args[0] <= 5)
                         {
                             $sender->setScale($args[0]);
-                            $sender->sendMessage(loader::PREFIX.'§7You have set your size to §a'.$args[0]);
+                            $sender->sendMessage(loader::PREFIX.'§dYou have set your size to §5'.$args[0]);
                         }
                     }
                     elseif (strtolower($args[0]) == 'about')
                     {
-                        $sender->sendMessage(loader::PREFIX.'§7Sizer by §aCapricornOfLynx §7and §aDokiaCraft.net');
+                        $sender->sendMessage(loader::PREFIX.'§cNot showing due to self leak information.');
                     }
                     elseif (strtolower($args[0]) == 'reset')
                     {
                         $sender->setScale(1);
-                        $sender->sendMessage(loader::PREFIX.'§7Your size has been reset');
+                        $sender->sendMessage(loader::PREFIX.'§dYour size has been reset succesfully!');
                     }
                     else
                     {
-                        $sender->sendMessage(loader::PREFIX.'§7You must specify the size numerically!');
+                        $sender->sendMessage(loader::PREFIX.'§2You must specify the size numerically!');
                     }
                 }
                 else
                 {
-                    $sender->sendMessage(loader::PREFIX.'§7Use: §a/size <0.1-10|about>');
+                    $sender->sendMessage(loader::PREFIX.'§bPlease use: §a/size <0.5-5|about>');
                 }
             }
             else
             {
-                $sender->sendMessage(loader::PREFIX.'§7You are not allowed to execute this command!');
+                $sender->sendMessage(loader::PREFIX.'§2You are not allowed to execute this command!');
             }
         }
         else
