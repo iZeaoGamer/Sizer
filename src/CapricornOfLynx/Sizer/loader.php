@@ -7,8 +7,8 @@ use pocketmine\plugin\PluginBase;
 class loader extends PluginBase
 {
 
-const PREFIX = '§l§aSizer §8»§r ';
-const CONSOLE_SENDER = '§4You have to be in-game';
+const PREFIX = '§7[§6Size§7] ';
+const CONSOLE_SENDER = '§2You have to be in-game';
     
     public function onEnable()
     {
