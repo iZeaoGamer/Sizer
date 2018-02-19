@@ -15,7 +15,7 @@ class size extends PluginCommand
     {
         parent::__construct("size", $plugin);
         $this->setDescription('change your size.');
-        $this->setUsage('/size <0.5-5|about>');
+        $this->setUsage('/size <1-5|about>');
     }
 
     public function execute(CommandSender $sender, string $commandLabel, array $args)
@@ -28,7 +28,7 @@ class size extends PluginCommand
                 {
                     if (is_numeric($args[0]))
                     {
-                        if ($args[0] >= 0.5 && $args[0] <= 5)
+                        if ($args[0] >= 1 && $args[0] <= 5)
                         {
                             $sender->setScale($args[0]);
                             $sender->sendMessage(loader::PREFIX.'§dYou have set your size to §5'.$args[0]);
